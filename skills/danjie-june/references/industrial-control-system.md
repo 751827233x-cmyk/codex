@@ -1,6 +1,6 @@
 # 工业级改编控制系统
 
-Use this reference with `full-guidelines.md`, `axis-continuity.md`, and `high-density-storyboard.md` when converting scripts, novels, or scene outlines into Danjie June AI-video storyboard execution drafts. This file extracts the reusable control logic from the user's long-form source rules, while preserving Danjie June constraints.
+Use this reference with `full-guidelines.md`, `axis-continuity.md`, `high-density-storyboard.md`, and `staging-entrance-system.md` when converting scripts, novels, or scene outlines into Danjie June AI-video storyboard execution drafts. This file extracts the reusable control logic from the user's long-form source rules, while preserving Danjie June constraints. `staging-entrance-system.md` governs how scene openings, arrivals, reveals, exits, and interrupted exits are physically staged before conflict or dialogue lands.
 
 ## Compatibility Filter
 
@@ -35,6 +35,7 @@ Before writing segments, run a compact control pass. Keep it internal unless the
 - **Scene map**: location, time, interior/exterior, entrance/exit direction, weather or atmosphere if explicit.
 - **Plot boundaries**: divide by time/place change, micro-goal change, key power-changing entrance/exit, or emotion/action settling into a new state.
 - **Load scan**: classify each beat as high, medium, or regular load based on character count, physical contact, movement, effects, wide environment pressure, or extreme close detail.
+- **Opening/entrance staging**: identify whether the beat needs scene opening, mid-conflict lead-in, explicit entrance, hidden reveal, power entrance, exit, or blocked exit handling.
 - **Space state**: decide whether this is spatial initialization, full inheritance, or relationship re-establishment.
 - **Master relationship**: identify any distance, height, layer, occlusion, faction, or power-position relationship that must not be flattened for convenience.
 - **Visual anchors**: opening anchor, escalation anchor, hook/aftermath anchor.
