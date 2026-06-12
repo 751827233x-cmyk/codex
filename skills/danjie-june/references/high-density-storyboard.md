@@ -1,6 +1,6 @@
 # 高密度分镜与情节打包规则
 
-Use this reference with `full-guidelines.md` and `axis-continuity.md` when the generated storyboard feels thin, too fragmented, or lacks cinematic information per segment. The goal is not to make output bloated; it is to make each segment carry more story, performance, sound, spatial, and physical information while staying compatible with Danjie June constraints.
+Use this reference with `full-guidelines.md`, `axis-continuity.md`, and `industrial-control-system.md` when the generated storyboard feels thin, too fragmented, or lacks cinematic information per segment. `industrial-control-system.md` governs plot slicing, load scanning, spatial inheritance, and stability; this file governs how each segment and shot becomes denser without becoming bloated.
 
 ## Compatibility Boundaries
 

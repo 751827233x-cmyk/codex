@@ -1,6 +1,6 @@
 ---
 name: danjie-june
-description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, high-density story-beat packing, performance-dialogue fusion, shot timing, movement, lighting, sound effects, anti-axis-crossing rules, vertical 9:16 spatial continuity, and multi-batch consistency constraints.
+description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, industrial plot slicing, load scanning, high-density story-beat packing, performance-dialogue fusion, shot timing, movement, lighting, sound effects, anti-axis-crossing rules, spatial state tracking, vertical 9:16 spatial continuity, and multi-batch consistency constraints.
 ---
 
 # 丹姐6月
@@ -8,8 +8,8 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 ## Core Workflow
 
 1. Read the user's source material, reference images, and any explicit scene requirements before drafting.
-2. If producing a full storyboard execution draft, load `references/full-guidelines.md`, `references/axis-continuity.md`, and `references/high-density-storyboard.md`; follow all three as the authoritative specification.
-3. Before splitting, perform a compact load scan and beat-packing pass: identify the core conflict, true plot boundaries, active character count, motion/effects load, and the opening/escalation/aftermath visual anchors.
+2. If producing a full storyboard execution draft, load `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, and `references/industrial-control-system.md`; follow all four as the authoritative specification.
+3. Before splitting, perform a compact control pass: identify source mode, name mode, core conflict, true plot boundaries, active character count, load level, dominant timing driver, spatial state, master spatial relationship, sound plan, and opening/escalation/aftermath visual anchors.
 4. Split by complete dramatic beats, not by single dialogue lines. Preserve all original dialogue exactly; never delete, compress, paraphrase, or rewrite dialogue to fit timing.
 5. Establish the scene's action line, camera safety side, screen-left/screen-right assignments, and vertical 9:16 lanes before writing shots. Keep this as a production ledger, not repeated as verbose AI-video prompt text.
 6. Track each character's position, posture, facing direction, props, visible condition, emotion, eye-line, screen direction, and vertical-frame lane from segment to segment.
@@ -20,21 +20,30 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 
 - Dialogue is never deleted. If dialogue exceeds density limits, split the segment; if dialogue is too sparse, merge with adjacent material.
 - Keep dialogue density within 20-45 Chinese characters per 15 seconds, excluding punctuation, and add a dialogue count note in the script-content field.
+- Use original character names by default. Only anonymize into `角色1`, `角色2`, etc. when the user explicitly requests anonymous mode.
+- Never split in the middle of a source line, OS/VO line, physical action, emotional collapse, or unfinished flashback. If a beat is too large, cut only at a true plot boundary.
 - Each segment should normally contain at least 2 dialogue lines. A 1-line segment may only be 4-6 seconds with no more than 3 shots. Pure action/no-dialogue segments may only be up to 4 seconds with no more than 2 shots.
 - Each segment must carry one complete micro-beat: setup/action trigger, dialogue or OS/VO if present in source, counter-reaction, and a visual aftertaste or state refresh. Do not output a thin "one sentence + one reaction" segment unless the source sentence is a major turn.
 - Every segment must include `本段生成规划` so the conflict function, load level, emotion curve, visual anchor, and packing reason are explicit before the shot list.
+- `本段生成规划` must also expose the useful control decisions: source mode, plot boundary, load/time basis, spatial state, master spatial relationship, editing rhythm, and sound strategy.
 - Each shot lasts 2-4 seconds. Each segment lasts no more than 15 seconds. The final spoken line must end at least 1 second before the segment ends.
+- Use load to choose shot density within Danjie limits: high load favors more 2秒 shots and cause-impact-reaction-aftermath coverage; medium load favors 2-3秒 reaction coverage plus 3-4秒 dialogue shots; regular load favors fewer 3-4秒 shots with stronger performance and atmosphere.
 - Cuts are direct cuts only. Camera movement exists only inside one shot; never use movement to transition between shots.
+- Do not output English transition tags. For action continuity, write direct-cut logic in Chinese, e.g. cut at the action peak and continue the same screen direction.
 - Every shot must include duration, camera movement, speed, framing, emotion, action, eye-line, spatial relationship, and `[光效]`.
 - Shot lines must be high-density natural-language prompts: include shot purpose, camera start/move/end, compact spatial sentence, performance process, dialogue or OS/VO fusion when present, sound/physical cue, and `[光效]`. Do not leave dialogue as a bare quote after the action.
+- If dialogue or camera movement outlasts the visible action, fill the time with motivated micro-action, breath, eye-line change, fabric/prop response, silence, or environmental movement; never leave a static talking vacuum.
 - Do not repeat the same movement style in adjacent shots. Main movement choices should favor left/right pan, rotating tilt up/down, and slow push-in; no single movement type should exceed 30% of shots in a segment.
 - Characters cannot stand still and recite lines. Anyone visible must have a relevant facial reaction or body micro-action.
 - Position, posture, facing direction, action momentum, and emotion must continue smoothly between segments. Any change requires an explicit transitional action.
 - The scene must include a `场次空间锁定表` and every segment must include a compact `连续性承接表`. These ledgers are for continuity control and should not be copied verbosely into every AI video prompt line.
 - Never cross the axis accidentally. Define the main action line and camera safety side, then keep every shot on that side unless a visible scripted axis reset happens.
 - Lock screen direction in 9:16 vertical video. State who stays screen-left/screen-center/screen-right, who looks screen-left/screen-right, and which vertical lane (left 30%, center 50%, right 70%) each subject occupies.
+- Track every physically present entity, including silent, background, out-of-focus, restrained, unconscious, or off-screen-but-present characters when their position affects blocking, threat, or continuity.
+- If drama depends on distance, height difference, layer, occlusion, doorway position, faction layout, or power position, that master spatial relationship must be stated naturally in every shot and must not be flattened for close-up convenience.
 - Reverse shots must be same-axis or same-side reverse shots. Do not write free "反打" that flips screen direction.
 - In close shots and over-shoulder shots, preserve orientation by naming the visible shoulder, off-screen eye-line, screen direction, and vertical-frame lane.
+- Disable standard over-shoulder/reverse-shot coverage when characters are too far apart, at different heights, blocked by objects, not facing each other, or positioned in different layers; use relationship shots, single reaction shots, long-lens observation, or low/high angle relationship shots instead.
 - Use compact shot duration format by default: `2秒`, `3秒`, `4秒`. Do not write timeline ranges like `00:00-00:02` unless the user explicitly asks for timeline editing.
 - In AI video prompt lines, include only visually useful continuity words such as `入口侧同轴`, `同侧过肩`, `沈左/陆中/李右`, `前景/中景/后景`. Avoid verbose labels like `轴线：新场景建轴 + 屏幕方向：... + 竖屏构图：...` in every shot.
 - Full shots are for spatial reference. Full shots must not contain dialogue, OS, VO, or off-screen narration. Full shots are max 2 seconds and must still include movement.
@@ -46,6 +55,7 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 - If a reference image is provided, follow visible clothing, appearance, and scene details strictly. If explicit scene requirements are provided, follow them without adding unmentioned elements.
 - Ignore clothing/appearance descriptions inside the script unless they are supported by a provided reference image.
 - Preserve script-authored OS/VO exactly when the source script already contains it. Do not invent new OS/VO, narration, or off-screen lines.
+- For novel/prose material, externalize inner psychology into visible performance first. Add OS/VO only when the source clearly contains inner speech or the user requests it.
 - Never include unscripted旁白, black screen, subtitles, text-on-screen, subtitle-like descriptions, BGM, BGM fields, eye catchlights, facial light spots, or random Tyndall light.
 - Use Tyndall light only when the scene clearly has light passing through particles such as smoke, dust, mist, or candle smoke.
 
@@ -86,10 +96,17 @@ Use this structure for every segment:
 - 人物B
 
 本段生成规划
+- 素材模式：
 - 冲突功能：
+- 情节边界：
 - 负载：
+- 时长依据：
 - 情绪曲线：
 - 视觉锚点：
+- 空间状态：
+- 主空间关系：
+- 剪辑律动：
+- 声音策略：
 - 打包理由：
 
 人物站位
@@ -107,6 +124,9 @@ Use this structure for every segment:
 - 摄影机安全侧：
 - 屏幕方向锁：
 - 纵深层级：
+- 核心相对距离：
+- 高低/同层关系：
+- 遮挡/阵营关系：
 - 竖屏安全区：
 - 允许机位：
 - 禁止机位：
@@ -129,6 +149,8 @@ Use this structure for every segment:
 - 承接上一段末帧：
 - 本段开始状态：
 - 本段结束状态：
+- 全员空间状态刷新：
+- 静默/焦外角色占位：
 - 下一段首帧约束：
 
 画面视觉基调
@@ -160,18 +182,25 @@ Use this structure for every segment:
 
 ## Required Self-Check
 
-Before finalizing, check the draft against `references/full-guidelines.md`, `references/axis-continuity.md`, and `references/high-density-storyboard.md`, especially:
+Before finalizing, check the draft against `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, and `references/industrial-control-system.md`, especially:
 
 - dialogue completeness and character-count compliance
 - every segment contains a complete micro-beat and has `本段生成规划`
+- `本段生成规划` includes plot boundary, load/time basis, spatial state, master spatial relationship, editing rhythm, and sound strategy
 - no segment is merely "one thin line + one reaction" unless it is a major turn
+- no segment cuts mid-action, mid-dialogue, mid-OS/VO, or inside an unfinished flashback
+- load classification matches shot density and duration
 - direct cuts only
+- no English transition tags or backend algorithm terms appear in final shot lines
 - explicit action line, camera safety side, and stable screen direction
 - same-axis or same-side reverse shots only
 - vertical 9:16 lane stability and central safe-area framing
+- every physically present character is tracked or intentionally held as off-screen/background
+- master spatial relationships are not flattened for close-ups, dialogue clarity, or standard OTS coverage
 - continuity ledger carries previous end state and next first-frame constraints
 - shot lines use compact duration format and do not repeat verbose ledger labels
 - shot lines include story purpose, natural spatial language, performance-dialogue fusion, and sound/physical cue
+- no static talking vacuum; long dialogue or movement has motivated micro-actions and physical feedback
 - each new scene has a complete visual style master before `[光效]` shorthand is used
 - every shot has movement and `[光效]`
 - no BGM/subtitles/black screen/unscripted narration/text-on-screen
