@@ -10,7 +10,7 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 1. Read the user's source material, reference images, and any explicit scene requirements before drafting.
 2. If producing a full storyboard execution draft, load `references/full-guidelines.md` and `references/axis-continuity.md`; follow both as the authoritative specification.
 3. Split by complete dramatic beats. Preserve all original dialogue exactly; never delete, compress, paraphrase, or rewrite dialogue to fit timing.
-4. Establish the scene's action line, camera safety side, screen-left/screen-right assignments, and vertical 9:16 lanes before writing shots.
+4. Establish the scene's action line, camera safety side, screen-left/screen-right assignments, and vertical 9:16 lanes before writing shots. Keep this as a production ledger, not repeated as verbose AI-video prompt text.
 5. Track each character's position, posture, facing direction, props, visible condition, emotion, eye-line, screen direction, and vertical-frame lane from segment to segment.
 6. Draft each segment with the fixed output structure below, keeping each segment prompt under 1900 Chinese characters.
 7. Self-check every segment before delivering. Fix violations before output.
@@ -22,15 +22,17 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 - Each segment should normally contain at least 2 dialogue lines. A 1-line segment may only be 4-6 seconds with no more than 3 shots. Pure action/no-dialogue segments may only be up to 4 seconds with no more than 2 shots.
 - Each shot lasts 2-4 seconds. Each segment lasts no more than 15 seconds. The final spoken line must end at least 1 second before the segment ends.
 - Cuts are direct cuts only. Camera movement exists only inside one shot; never use movement to transition between shots.
-- Every shot must include camera movement, speed, framing, composition, emotion, action, eye-line, spatial relationship, and `[光效]`.
+- Every shot must include duration, camera movement, speed, framing, emotion, action, eye-line, spatial relationship, and `[光效]`.
 - Do not repeat the same movement style in adjacent shots. Main movement choices should favor left/right pan, rotating tilt up/down, and slow push-in; no single movement type should exceed 30% of shots in a segment.
 - Characters cannot stand still and recite lines. Anyone visible must have a relevant facial reaction or body micro-action.
 - Position, posture, facing direction, action momentum, and emotion must continue smoothly between segments. Any change requires an explicit transitional action.
-- The scene must include a `场次空间锁定表` and every segment must include a `连续性承接表`.
+- The scene must include a `场次空间锁定表` and every segment must include a compact `连续性承接表`. These ledgers are for continuity control and should not be copied verbosely into every AI video prompt line.
 - Never cross the axis accidentally. Define the main action line and camera safety side, then keep every shot on that side unless a visible scripted axis reset happens.
 - Lock screen direction in 9:16 vertical video. State who stays screen-left/screen-center/screen-right, who looks screen-left/screen-right, and which vertical lane (left 30%, center 50%, right 70%) each subject occupies.
 - Reverse shots must be same-axis or same-side reverse shots. Do not write free "反打" that flips screen direction.
 - In close shots and over-shoulder shots, preserve orientation by naming the visible shoulder, off-screen eye-line, screen direction, and vertical-frame lane.
+- Use compact shot duration format by default: `2秒`, `3秒`, `4秒`. Do not write timeline ranges like `00:00-00:02` unless the user explicitly asks for timeline editing.
+- In AI video prompt lines, include only visually useful continuity words such as `入口侧同轴`, `同侧过肩`, `沈左/陆中/李右`, `前景/中景/后景`. Avoid verbose labels like `轴线：新场景建轴 + 屏幕方向：... + 竖屏构图：...` in every shot.
 - Full shots are for spatial reference. Full shots must not contain dialogue, OS, VO, or off-screen narration. Full shots are max 2 seconds and must still include movement.
 - Start a new scene with a full shot. End the first segment with a silent full shot after all dialogue. Add a silent full shot after major position/posture/facing changes.
 - Ending shots cannot be full shots and must serve the next segment's continuation.
@@ -53,6 +55,13 @@ Use the base lighting vocabulary from `references/full-guidelines.md`. In each s
 - Medium-close and close shots must use backlight or side-backlight to create an edge light.
 - Match color temperature to genre and keep it consistent within a scene.
 - Do not write eye catchlights. Do not write facial speckles, facial light spots, or dirty light patches on faces.
+
+## Visual Style Completeness
+
+- Do not replace the original detailed visual style with vague phrases. Each new scene must include a full `本场画面风格母版` that covers cinematic focal length, 8K ultra-realism, HDR, high contrast, rim/back light, shallow depth of field, clean faces, gender-specific lighting, genre color temperature, no text/subtitles/BGM, no eye catchlights, and no facial light spots.
+- For later segments in the same scene, write `沿用本场画面风格母版` plus the segment-specific mood and lighting change. Do not omit the style system entirely.
+- Shot lines may use `[光效]` to save space only after the scene style master has been written.
+- For female-oriented realistic爽剧, emphasize emotional contrast, clean but high-pressure lighting, restrained romantic rim light, shallow depth of field, and reaction-shot atmosphere without adding decorative text or sticker effects.
 
 ## Fixed Output Structure
 
@@ -91,6 +100,9 @@ Use this structure for every segment:
 - 禁止机位：
 - 本场连续性状态：
 
+本场画面风格母版
+（首次出现本场时完整写出电影焦段、8K超写实、HDR高对比、浅景深、轮廓光/逆光、男女打光方式、题材色温、无字幕无BGM、禁止眼神光和面部光斑；后续段落可写沿用母版+本段氛围）
+
 人物视线关系位
 - 人物A视线朝向：
 - 人物B视线朝向：
@@ -118,7 +130,7 @@ Use this structure for every segment:
 台词字数统计：XX字，段时长XX秒，符合15秒内20字≤台词≤45字。
 
 分秒运镜及切镜视频提示词
-00:00-00:xx 景别 / 运镜方式（速度） / 构图方式 + 轴线：同侧不过轴/同侧过肩/新场景建轴/轴线重置中 + 屏幕方向：人物A屏幕左看右、人物B屏幕右看左 + 竖屏构图：人物A左30%/人物B右70%/前中后景层级 + 镜头语言 + 人物表情情绪 + 人物动作 + 视线关系位 + 空间关系 + [光效]
+2秒 景别 / 运镜方式（速度） / 构图方式 + 简短空间锁定词（如入口侧同轴、沈左陆中李右、同侧过肩、前中后景） + 镜头语言 + 人物表情情绪 + 人物动作 + 视线关系位 + [光效]
 
 特效提示词
 
@@ -144,6 +156,8 @@ Before finalizing, check the draft against `references/full-guidelines.md`, espe
 - same-axis or same-side reverse shots only
 - vertical 9:16 lane stability and central safe-area framing
 - continuity ledger carries previous end state and next first-frame constraints
+- shot lines use compact duration format and do not repeat verbose ledger labels
+- each new scene has a complete visual style master before `[光效]` shorthand is used
 - every shot has movement and `[光效]`
 - no BGM/subtitles/black screen/unscripted narration/text-on-screen
 - no invented clothing, appearance, or scene words without reference image or scene requirement
