@@ -1,6 +1,6 @@
 ---
 name: danjie-june
-description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, shot timing, movement, lighting, sound effects, and continuity constraints.
+description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, shot timing, movement, lighting, sound effects, anti-axis-crossing rules, vertical 9:16 spatial continuity, and multi-batch consistency constraints.
 ---
 
 # 丹姐6月
@@ -8,11 +8,12 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 ## Core Workflow
 
 1. Read the user's source material, reference images, and any explicit scene requirements before drafting.
-2. If producing a full storyboard execution draft, load `references/full-guidelines.md` and follow it as the authoritative specification.
+2. If producing a full storyboard execution draft, load `references/full-guidelines.md` and `references/axis-continuity.md`; follow both as the authoritative specification.
 3. Split by complete dramatic beats. Preserve all original dialogue exactly; never delete, compress, paraphrase, or rewrite dialogue to fit timing.
-4. Track each character's position, posture, facing direction, props, visible condition, emotion, and eye-line from segment to segment.
-5. Draft each segment with the fixed output structure below, keeping each segment prompt under 1900 Chinese characters.
-6. Self-check every segment before delivering. Fix violations before output.
+4. Establish the scene's action line, camera safety side, screen-left/screen-right assignments, and vertical 9:16 lanes before writing shots.
+5. Track each character's position, posture, facing direction, props, visible condition, emotion, eye-line, screen direction, and vertical-frame lane from segment to segment.
+6. Draft each segment with the fixed output structure below, keeping each segment prompt under 1900 Chinese characters.
+7. Self-check every segment before delivering. Fix violations before output.
 
 ## Non-Negotiable Rules
 
@@ -25,6 +26,11 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 - Do not repeat the same movement style in adjacent shots. Main movement choices should favor left/right pan, rotating tilt up/down, and slow push-in; no single movement type should exceed 30% of shots in a segment.
 - Characters cannot stand still and recite lines. Anyone visible must have a relevant facial reaction or body micro-action.
 - Position, posture, facing direction, action momentum, and emotion must continue smoothly between segments. Any change requires an explicit transitional action.
+- The scene must include a `场次空间锁定表` and every segment must include a `连续性承接表`.
+- Never cross the axis accidentally. Define the main action line and camera safety side, then keep every shot on that side unless a visible scripted axis reset happens.
+- Lock screen direction in 9:16 vertical video. State who stays screen-left/screen-center/screen-right, who looks screen-left/screen-right, and which vertical lane (left 30%, center 50%, right 70%) each subject occupies.
+- Reverse shots must be same-axis or same-side reverse shots. Do not write free "反打" that flips screen direction.
+- In close shots and over-shoulder shots, preserve orientation by naming the visible shoulder, off-screen eye-line, screen direction, and vertical-frame lane.
 - Full shots are for spatial reference. Full shots must not contain dialogue, OS, VO, or off-screen narration. Full shots are max 2 seconds and must still include movement.
 - Start a new scene with a full shot. End the first segment with a silent full shot after all dialogue. Add a silent full shot after major position/posture/facing changes.
 - Ending shots cannot be full shots and must serve the next segment's continuation.
@@ -32,7 +38,8 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 - If no reference image and no explicit scene requirement is provided, do not invent clothing, appearance, or scene description words. Write only action, emotion, camera movement, lighting, and spatial relationships.
 - If a reference image is provided, follow visible clothing, appearance, and scene details strictly. If explicit scene requirements are provided, follow them without adding unmentioned elements.
 - Ignore clothing/appearance descriptions inside the script unless they are supported by a provided reference image.
-- Never include旁白, black screen, subtitles, text-on-screen, subtitle-like descriptions, BGM, BGM fields, eye catchlights, facial light spots, or random Tyndall light.
+- Preserve script-authored OS/VO exactly when the source script already contains it. Do not invent new OS/VO, narration, or off-screen lines.
+- Never include unscripted旁白, black screen, subtitles, text-on-screen, subtitle-like descriptions, BGM, BGM fields, eye catchlights, facial light spots, or random Tyndall light.
 - Use Tyndall light only when the scene clearly has light passing through particles such as smoke, dust, mist, or candle smoke.
 
 ## Lighting Rules
@@ -72,6 +79,18 @@ Use this structure for every segment:
 - 后景：
 - 中轴关系：
 
+场次空间锁定表
+- 画幅：
+- 世界坐标：
+- 主轴线：
+- 摄影机安全侧：
+- 屏幕方向锁：
+- 纵深层级：
+- 竖屏安全区：
+- 允许机位：
+- 禁止机位：
+- 本场连续性状态：
+
 人物视线关系位
 - 人物A视线朝向：
 - 人物B视线朝向：
@@ -81,6 +100,12 @@ Use this structure for every segment:
 人物特殊道具、姿态状态
 - 人物A：哪只手拿什么道具 / 姿态 / 动作 / 情绪 / 持续中的外观状态
 - 人物B：哪只手拿什么道具 / 姿态 / 动作 / 情绪 / 持续中的外观状态
+
+连续性承接表
+- 承接上一段末帧：
+- 本段开始状态：
+- 本段结束状态：
+- 下一段首帧约束：
 
 画面视觉基调
 固定光效词组 + 当前剧情专属氛围、光影、空间重点、打光方式、色温基调、近景逆光要求、丁达尔光是否适用；全程无BGM、无字幕。
@@ -93,7 +118,7 @@ Use this structure for every segment:
 台词字数统计：XX字，段时长XX秒，符合15秒内20字≤台词≤45字。
 
 分秒运镜及切镜视频提示词
-00:00-00:xx 景别 / 运镜方式（速度） / 构图方式 + 镜头语言 + 人物表情情绪 + 人物动作 + 视线关系位 + 空间关系 + [光效]
+00:00-00:xx 景别 / 运镜方式（速度） / 构图方式 + 轴线：同侧不过轴/同侧过肩/新场景建轴/轴线重置中 + 屏幕方向：人物A屏幕左看右、人物B屏幕右看左 + 竖屏构图：人物A左30%/人物B右70%/前中后景层级 + 镜头语言 + 人物表情情绪 + 人物动作 + 视线关系位 + 空间关系 + [光效]
 
 特效提示词
 
@@ -115,8 +140,12 @@ Before finalizing, check the draft against `references/full-guidelines.md`, espe
 
 - dialogue completeness and character-count compliance
 - direct cuts only
+- explicit action line, camera safety side, and stable screen direction
+- same-axis or same-side reverse shots only
+- vertical 9:16 lane stability and central safe-area framing
+- continuity ledger carries previous end state and next first-frame constraints
 - every shot has movement and `[光效]`
-- no BGM/subtitles/black screen/narration/text-on-screen
+- no BGM/subtitles/black screen/unscripted narration/text-on-screen
 - no invented clothing, appearance, or scene words without reference image or scene requirement
 - no eye catchlights, facial light spots, or unjustified Tyndall light
 - full shots contain no dialogue and are max 2 seconds

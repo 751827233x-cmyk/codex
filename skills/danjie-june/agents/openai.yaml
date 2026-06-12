@@ -1,4 +1,4 @@
 interface:
   display_name: "丹姐6月"
-  short_description: "Strict AI short-drama storyboard drafting"
-  default_prompt: "Use $danjie-june to convert my Chinese script into an AI short-drama storyboard execution draft."
+  short_description: "Continuity-safe AI short-drama storyboards"
+  default_prompt: "Use $danjie-june to convert my Chinese script into a continuity-safe AI short-drama storyboard execution draft."
