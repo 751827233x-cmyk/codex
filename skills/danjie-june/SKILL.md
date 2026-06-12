@@ -1,0 +1,124 @@
+---
+name: danjie-june
+description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, shot timing, movement, lighting, sound effects, and continuity constraints.
+---
+
+# 丹姐6月
+
+## Core Workflow
+
+1. Read the user's source material, reference images, and any explicit scene requirements before drafting.
+2. If producing a full storyboard execution draft, load `references/full-guidelines.md` and follow it as the authoritative specification.
+3. Split by complete dramatic beats. Preserve all original dialogue exactly; never delete, compress, paraphrase, or rewrite dialogue to fit timing.
+4. Track each character's position, posture, facing direction, props, visible condition, emotion, and eye-line from segment to segment.
+5. Draft each segment with the fixed output structure below, keeping each segment prompt under 1900 Chinese characters.
+6. Self-check every segment before delivering. Fix violations before output.
+
+## Non-Negotiable Rules
+
+- Dialogue is never deleted. If dialogue exceeds density limits, split the segment; if dialogue is too sparse, merge with adjacent material.
+- Keep dialogue density within 20-45 Chinese characters per 15 seconds, excluding punctuation, and add a dialogue count note in the script-content field.
+- Each segment should normally contain at least 2 dialogue lines. A 1-line segment may only be 4-6 seconds with no more than 3 shots. Pure action/no-dialogue segments may only be up to 4 seconds with no more than 2 shots.
+- Each shot lasts 2-4 seconds. Each segment lasts no more than 15 seconds. The final spoken line must end at least 1 second before the segment ends.
+- Cuts are direct cuts only. Camera movement exists only inside one shot; never use movement to transition between shots.
+- Every shot must include camera movement, speed, framing, composition, emotion, action, eye-line, spatial relationship, and `[光效]`.
+- Do not repeat the same movement style in adjacent shots. Main movement choices should favor left/right pan, rotating tilt up/down, and slow push-in; no single movement type should exceed 30% of shots in a segment.
+- Characters cannot stand still and recite lines. Anyone visible must have a relevant facial reaction or body micro-action.
+- Position, posture, facing direction, action momentum, and emotion must continue smoothly between segments. Any change requires an explicit transitional action.
+- Full shots are for spatial reference. Full shots must not contain dialogue, OS, VO, or off-screen narration. Full shots are max 2 seconds and must still include movement.
+- Start a new scene with a full shot. End the first segment with a silent full shot after all dialogue. Add a silent full shot after major position/posture/facing changes.
+- Ending shots cannot be full shots and must serve the next segment's continuation.
+- Use varied shot sizes: full shot, medium shot, medium close shot, close shot. Do not use face close-ups or chest-above close-ups except brief eye/mouth inserts at key emotional explosions.
+- If no reference image and no explicit scene requirement is provided, do not invent clothing, appearance, or scene description words. Write only action, emotion, camera movement, lighting, and spatial relationships.
+- If a reference image is provided, follow visible clothing, appearance, and scene details strictly. If explicit scene requirements are provided, follow them without adding unmentioned elements.
+- Ignore clothing/appearance descriptions inside the script unless they are supported by a provided reference image.
+- Never include旁白, black screen, subtitles, text-on-screen, subtitle-like descriptions, BGM, BGM fields, eye catchlights, facial light spots, or random Tyndall light.
+- Use Tyndall light only when the scene clearly has light passing through particles such as smoke, dust, mist, or candle smoke.
+
+## Lighting Rules
+
+Use the base lighting vocabulary from `references/full-guidelines.md`. In each segment and shot:
+
+- Use cinematic focal lengths, 8K ultra-realism, HDR, high contrast, rim/back light, shallow depth of field, clean faces, and no text/subtitles.
+- Male characters use Rembrandt lighting.
+- Female characters use butterfly lighting.
+- Atmosphere shots use rim light and backlight.
+- Medium-close and close shots must use backlight or side-backlight to create an edge light.
+- Match color temperature to genre and keep it consistent within a scene.
+- Do not write eye catchlights. Do not write facial speckles, facial light spots, or dirty light patches on faces.
+
+## Fixed Output Structure
+
+Use this structure for every segment:
+
+```text
+第X段
+
+场景
+- 场次编号：
+- 地点：
+- 时间：
+- 内/外景：
+
+实际出场人物
+- 人物A
+- 人物B
+
+人物站位
+- 左侧：
+- 中间：
+- 右侧：
+- 前景：
+- 后景：
+- 中轴关系：
+
+人物视线关系位
+- 人物A视线朝向：
+- 人物B视线朝向：
+- 当前是否对视：
+- 视线关系是否对上：
+
+人物特殊道具、姿态状态
+- 人物A：哪只手拿什么道具 / 姿态 / 动作 / 情绪 / 持续中的外观状态
+- 人物B：哪只手拿什么道具 / 姿态 / 动作 / 情绪 / 持续中的外观状态
+
+画面视觉基调
+固定光效词组 + 当前剧情专属氛围、光影、空间重点、打光方式、色温基调、近景逆光要求、丁达尔光是否适用；全程无BGM、无字幕。
+
+首帧镜头
+第一段直接写本段首帧；第二段起，首帧必须避开上一段最后一个镜头中的人物，优先写其他人物的单人镜头。
+
+剧本内容
+严格保留原剧本内容，不漏台词，不删台词；可补动作、情绪、特效过程，但不能改变剧情。
+台词字数统计：XX字，段时长XX秒，符合15秒内20字≤台词≤45字。
+
+分秒运镜及切镜视频提示词
+00:00-00:xx 景别 / 运镜方式（速度） / 构图方式 + 镜头语言 + 人物表情情绪 + 人物动作 + 视线关系位 + 空间关系 + [光效]
+
+特效提示词
+
+音效建议（与运镜联动）
+- 环境音：
+- 动作音：
+- 道具音：
+- 特效音：
+- 情绪增强音：
+
+主角音色建议
+- 主角A：
+- 主角B：
+```
+
+## Required Self-Check
+
+Before finalizing, check the draft against `references/full-guidelines.md`, especially:
+
+- dialogue completeness and character-count compliance
+- direct cuts only
+- every shot has movement and `[光效]`
+- no BGM/subtitles/black screen/narration/text-on-screen
+- no invented clothing, appearance, or scene words without reference image or scene requirement
+- no eye catchlights, facial light spots, or unjustified Tyndall light
+- full shots contain no dialogue and are max 2 seconds
+- positions, posture, facing direction, visible condition, and emotion continue across segments
+- final dialogue leaves at least 1 second of breathing room
