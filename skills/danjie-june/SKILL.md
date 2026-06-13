@@ -1,6 +1,6 @@
 ---
 name: danjie-june
-description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, professional opening and entrance staging, industrial plot slicing, load scanning, high-density story-beat packing, performance-dialogue fusion, shot timing, movement, lighting, sound effects, anti-axis-crossing rules, spatial state tracking, vertical 9:16 spatial continuity, and multi-batch consistency constraints.
+description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, professional opening and entrance staging, cinematic shot language, industrial plot slicing, load scanning, high-density story-beat packing, performance-dialogue fusion, shot timing, movement, lighting, sound effects, anti-axis-crossing rules, spatial state tracking, vertical 9:16 spatial continuity, and multi-batch consistency constraints.
 ---
 
 # 丹姐6月
@@ -8,8 +8,8 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 ## Core Workflow
 
 1. Read the user's source material, reference images, and any explicit scene requirements before drafting.
-2. If producing a full storyboard execution draft, load `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, `references/industrial-control-system.md`, and `references/staging-entrance-system.md`; follow all five as the authoritative specification.
-3. Before splitting, perform a compact control pass: identify source mode, name mode, core conflict, true plot boundaries, active character count, load level, dominant timing driver, opening/entrance/exit staging needs, spatial state, master spatial relationship, sound plan, and opening/escalation/aftermath visual anchors.
+2. If producing a full storyboard execution draft, load `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, `references/industrial-control-system.md`, `references/staging-entrance-system.md`, and `references/cinematic-shot-language.md`; follow all six as the authoritative specification.
+3. Before splitting, perform a compact control pass: identify source mode, name mode, core conflict, true plot boundaries, active character count, load level, dominant timing driver, opening/entrance/exit staging needs, spatial state, master spatial relationship, shot-language strategy, sound plan, and opening/escalation/aftermath visual anchors.
 4. Split by complete dramatic beats, not by single dialogue lines. Preserve all original dialogue exactly; never delete, compress, paraphrase, or rewrite dialogue to fit timing.
 5. Establish the scene's action line, camera safety side, screen-left/screen-right assignments, and vertical 9:16 lanes before writing shots. Keep this as a production ledger, not repeated as verbose AI-video prompt text.
 6. Track each character's position, posture, facing direction, props, visible condition, emotion, eye-line, screen direction, and vertical-frame lane from segment to segment.
@@ -34,7 +34,9 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 - Cuts are direct cuts only. Camera movement exists only inside one shot; never use movement to transition between shots.
 - Do not output English transition tags. For action continuity, write direct-cut logic in Chinese, e.g. cut at the action peak and continue the same screen direction.
 - Every shot must include duration, camera movement, speed, framing, emotion, action, eye-line, spatial relationship, and `[光效]`.
-- Shot lines must be high-density natural-language prompts: include shot purpose, camera start/move/end, compact spatial sentence, performance process, dialogue or OS/VO fusion when present, sound/physical cue, and `[光效]`. Do not leave dialogue as a bare quote after the action.
+- Shot lines must be high-density natural-language prompts: include shot motivation, camera attitude, composition or movement grammar, camera start/move/end, compact spatial sentence, performance process, dialogue or OS/VO fusion when present, sound/physical cue, and `[光效]`. Do not leave dialogue as a bare quote after the action.
+- Every shot must answer the director question `这个镜头为什么存在？` through visible cinematic behavior. Avoid generic movement that could be swapped with any other movement without changing the meaning.
+- Each shot must serve one editing function such as establish, drive, reveal, react, contrast, interrupt, settle, or hook. Vary these functions inside a segment.
 - If dialogue or camera movement outlasts the visible action, fill the time with motivated micro-action, breath, eye-line change, fabric/prop response, silence, or environmental movement; never leave a static talking vacuum.
 - Do not repeat the same movement style in adjacent shots. Main movement choices should favor left/right pan, rotating tilt up/down, and slow push-in; no single movement type should exceed 30% of shots in a segment.
 - Characters cannot stand still and recite lines. Anyone visible must have a relevant facial reaction or body micro-action.
@@ -107,6 +109,7 @@ Use this structure for every segment:
 - 情绪曲线：
 - 视觉锚点：
 - 开场/入场调度：
+- 镜头语言策略：
 - 空间状态：
 - 主空间关系：
 - 剪辑律动：
@@ -168,7 +171,7 @@ Use this structure for every segment:
 台词字数统计：XX字，段时长XX秒，符合15秒内20字≤台词≤45字。
 
 分秒运镜及切镜视频提示词
-2秒 景别 / 运镜方式（速度） / 构图方式 + 简短空间锁定词（如入口侧同轴、沈左陆中李右、同侧过肩、前中后景）；镜头从某个动作或空间锚点开始，移动到情绪或冲突重点，用画面说明本镜头功能；角色开口前有呼吸、停顿、眼神或手部动作，说“原台词/原OS/原VO”，说完后有余韵反应；加入环境声、动作声或物理反馈；[光效]
+2秒 景别 / 运镜方式（速度） / 构图方式 + 简短空间锁定词（如入口侧同轴、沈左陆中李右、同侧过肩、前中后景）；用具体镜头语言说明本镜头为什么存在，镜头从某个动作或空间锚点开始，按明确路径移动或保持有意图的弱运动，落到情绪、权力、揭示、反应、对比或余韵重点；通过构图、距离、焦点、遮挡、高低或留白表达剧情变化；角色开口前有呼吸、停顿、眼神或手部动作，说“原台词/原OS/原VO”，说完后有余韵反应；加入环境声、动作声或物理反馈；[光效]
 
 特效提示词
 
@@ -186,12 +189,15 @@ Use this structure for every segment:
 
 ## Required Self-Check
 
-Before finalizing, check the draft against `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, `references/industrial-control-system.md`, and `references/staging-entrance-system.md`, especially:
+Before finalizing, check the draft against `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, `references/industrial-control-system.md`, `references/staging-entrance-system.md`, and `references/cinematic-shot-language.md`, especially:
 
 - dialogue completeness and character-count compliance
 - every segment contains a complete micro-beat and has `本段生成规划`
 - `本段生成规划` includes plot boundary, load/time basis, opening/entrance staging, spatial state, master spatial relationship, editing rhythm, and sound strategy
 - no segment is merely "one thin line + one reaction" unless it is a major turn
+- every shot has visible cinematic motivation and cannot be reduced to `景别 + 运镜 + 动作`
+- movement choice expresses a specific camera attitude, composition strategy, or editing function
+- each segment varies editing functions instead of stacking only dialogue-driving shots
 - no scene opening begins with characters hard-cut into confrontation without a spatial/behavioral lead-in
 - no new character appears in final position without cue, approach/reveal, settle, existing-character reaction, and spatial integration
 - entrances and exits specify direction, path, final lane, reaction, and state refresh
@@ -206,7 +212,7 @@ Before finalizing, check the draft against `references/full-guidelines.md`, `ref
 - master spatial relationships are not flattened for close-ups, dialogue clarity, or standard OTS coverage
 - continuity ledger carries previous end state and next first-frame constraints
 - shot lines use compact duration format and do not repeat verbose ledger labels
-- shot lines include story purpose, natural spatial language, performance-dialogue fusion, and sound/physical cue
+- shot lines include cinematic motivation, camera attitude, natural spatial language, performance-dialogue fusion, and sound/physical cue
 - no static talking vacuum; long dialogue or movement has motivated micro-actions and physical feedback
 - each new scene has a complete visual style master before `[光效]` shorthand is used
 - every shot has movement and `[光效]`

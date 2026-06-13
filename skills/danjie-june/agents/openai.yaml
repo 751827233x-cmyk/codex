@@ -1,4 +1,4 @@
 interface:
   display_name: "丹姐6月"
-  short_description: "Industrial AI storyboards with professional staging"
-  default_prompt: "Use $danjie-june to convert my Chinese script into an industrial, high-density, professionally staged AI short-drama storyboard execution draft."
+  short_description: "Industrial AI storyboards with cinematic shot language"
+  default_prompt: "Use $danjie-june to convert my Chinese script into an industrial, high-density AI short-drama storyboard with professional staging and cinematic shot language."

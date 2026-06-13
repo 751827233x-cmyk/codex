@@ -1,6 +1,6 @@
 # 工业级改编控制系统
 
-Use this reference with `full-guidelines.md`, `axis-continuity.md`, `high-density-storyboard.md`, and `staging-entrance-system.md` when converting scripts, novels, or scene outlines into Danjie June AI-video storyboard execution drafts. This file extracts the reusable control logic from the user's long-form source rules, while preserving Danjie June constraints. `staging-entrance-system.md` governs how scene openings, arrivals, reveals, exits, and interrupted exits are physically staged before conflict or dialogue lands.
+Use this reference with `full-guidelines.md`, `axis-continuity.md`, `high-density-storyboard.md`, `staging-entrance-system.md`, and `cinematic-shot-language.md` when converting scripts, novels, or scene outlines into Danjie June AI-video storyboard execution drafts. This file extracts the reusable control logic from the user's long-form source rules, while preserving Danjie June constraints. `staging-entrance-system.md` governs how scene openings, arrivals, reveals, exits, and interrupted exits are physically staged before conflict or dialogue lands. `cinematic-shot-language.md` governs the directorial meaning of each shot.
 
 ## Compatibility Filter
 
@@ -38,6 +38,7 @@ Before writing segments, run a compact control pass. Keep it internal unless the
 - **Opening/entrance staging**: identify whether the beat needs scene opening, mid-conflict lead-in, explicit entrance, hidden reveal, power entrance, exit, or blocked exit handling.
 - **Space state**: decide whether this is spatial initialization, full inheritance, or relationship re-establishment.
 - **Master relationship**: identify any distance, height, layer, occlusion, faction, or power-position relationship that must not be flattened for convenience.
+- **Shot-language strategy**: identify the scene's dominant camera attitudes, e.g. cold judgment, secret spying, pressure, reveal, public exposure, escape, or aftermath.
 - **Visual anchors**: opening anchor, escalation anchor, hook/aftermath anchor.
 - **Dialogue/time estimate**: estimate whether dialogue, action, camera movement, or effects dominate the shot duration.
 - **Sound plan**: environment sound, physical SFX, prop/material sound, voice quality, silence or impact contrast.
