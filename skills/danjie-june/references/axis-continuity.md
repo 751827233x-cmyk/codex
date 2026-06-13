@@ -103,7 +103,7 @@ Include only visually useful continuity words:
 Shot-line pattern:
 
 ```text
-2秒 景别 / 运镜方式（速度） / 构图方式 + 入口侧同轴，A左看右、B右看左，前景A中景B后景C + 距离/焦点/遮挡/留白变化 + 人物情绪动作 + [光效]
+2秒 景别 / 运镜方式（速度） / 构图方式 + 入口侧同轴，A左看右、B右看左，前景A中景B后景C + 距离/焦点/遮挡/留白变化 + 景别容量内的可见人物/画外人物区分 + 人物情绪动作 + [光效]
 ```
 
 Use timeline ranges only when the user asks for an editing timeline, beat sheet, or exact timecode delivery.
@@ -121,3 +121,4 @@ Reject and revise the draft if any answer is "no":
 - Does each segment carry a continuity ledger with previous end state and next first-frame constraints?
 - If an axis reset appears, is the reset visible in the action and explained?
 - Do shot lines avoid repeating verbose ledger labels while still preserving visible space?
+- Does each close/medium-close shot avoid forcing distant characters into the same visible relationship?

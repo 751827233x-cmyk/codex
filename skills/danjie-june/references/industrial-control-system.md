@@ -140,7 +140,7 @@ Each segment should include sound as story information, not decoration:
 Shot lines must be natural language, not backend fields. Each shot should contain:
 
 ```text
-3秒 景别 / 运镜方式（速度） / 空间锁定词；镜头从可见动作或空间锚点开始，按明确路径移动或保持弱运动，落到冲突信息；自然写出谁仍在左/右、前/中/后、高/低、远/近、遮挡关系是否变化；角色以可见表演承载原台词或原OS/VO，并补上说完后的余韵；环境声/动作声/物理反馈；[光效]
+3秒 景别 / 运镜方式（速度） / 空间锁定词；镜头从可见动作或空间锚点开始，按明确路径移动或保持弱运动，落到冲突信息；自然写出谁仍在左/右、前/中/后、高/低、远/近、遮挡关系是否变化；景别容量装不下的对象只写画外方向、焦外存在或另切关系镜；角色以可见表演承载原台词或原OS/VO，并补上说完后的余韵；环境声/动作声/物理反馈；[光效]
 ```
 
 Hard requirements:
@@ -149,6 +149,7 @@ Hard requirements:
 - Every shot has either a meaningful camera movement sentence or a deliberate weak-motion sentence such as static locked frame, slight handheld breath, or rack focus.
 - Every shot explains its narrative purpose through image, not labels.
 - Every close shot or over-shoulder shot still names where the off-screen person remains.
+- Every shot obeys shot-size capacity: close and medium-close shots cannot also refresh distant group geography.
 - Do not write placeholder labels like `镜头运动句`, `空间关系句`, `表情变化句`, or `表情-台词融合句` in the final shot.
 
 ## What To Reject From The Source Rules

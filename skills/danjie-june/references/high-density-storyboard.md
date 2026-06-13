@@ -64,6 +64,7 @@ Mandatory content in each shot:
 
 - **Internal shot function**: decide what the shot must accomplish before writing, then show it through visible blocking, framing, movement, focus, distance, occlusion, held reaction, or sound.
 - **Cinematic behavior**: final shot lines must not explain purpose; the camera behavior and character reaction must make the story effect visible.
+- **Shot capacity**: decide who can physically fit in the chosen shot size and vertical frame; distant targets become off-screen eye-line or require a separate relationship shot.
 - **Camera motion**: start point, movement, speed, and end point.
 - **Space sentence**: where the key people still are; if no one moved, say the original spatial relationship remains.
 - **Performance process**: emotion as a change, not a label. Use "先...随后...说到...时...说完后..." when possible.

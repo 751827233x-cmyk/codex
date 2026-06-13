@@ -1,4 +1,4 @@
 interface:
   display_name: "丹姐6月"
-  short_description: "Industrial AI storyboards with cinematic shot language"
-  default_prompt: "Use $danjie-june to convert my Chinese script into an industrial, high-density AI short-drama storyboard with professional staging and cinematic shot language."
+  short_description: "Industrial AI storyboards with director-led cuts, shot capacity, and spatial continuity"
+  default_prompt: "Use $danjie-june to convert my Chinese script into an industrial, high-density AI short-drama storyboard with professional staging, director-led camera cuts, shot-capacity checks, and cinematic spatial continuity."

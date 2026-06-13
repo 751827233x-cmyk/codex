@@ -127,6 +127,7 @@ Each shot line must include:
 
 - A visible camera behavior that changes pressure, information, reaction, distance, or rhythm.
 - A composition strategy shown through frame position, depth, focus, occlusion, high/low relation, or negative space.
+- A shot-size capacity decision: who is visible, who is partial/focus-out, and who stays off-screen by eye-line.
 - A movement path or deliberate weak-motion state.
 - A story effect: pressure, reveal, reaction, contrast, reversal, aftermath, or hook.
 - Character performance fused with dialogue/OS/VO if present.
@@ -144,3 +145,4 @@ Before finalizing, revise if:
 - A power shift is stated in planning but not visible in framing, distance, stillness, or eye-lines.
 - A female-oriented爽点 is rushed past without reaction, silence, or held pressure.
 - Final shot lines contain explanatory phrases like `为了`, `用来表达`, `镜头动机`, or `镜头语言：`.
+- A close or medium-close shot tries to carry a far-separated group relationship instead of cutting to a relationship shot.

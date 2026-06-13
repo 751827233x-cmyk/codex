@@ -1,6 +1,6 @@
 ---
 name: danjie-june
-description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, professional opening and entrance staging, cinematic shot language, industrial plot slicing, load scanning, high-density story-beat packing, performance-dialogue fusion, shot timing, movement, lighting, sound effects, anti-axis-crossing rules, spatial state tracking, vertical 9:16 spatial continuity, and multi-batch consistency constraints.
+description: Generate AI short-drama and short-video storyboard execution drafts from novels, scripts, dialogue scenes, or scene outlines using the Danjie June rules. Use when the user asks for AI短剧分镜, 分镜执行稿, 视频化分镜, 短视频镜头脚本, 运镜提示词, or converting Chinese story/script text into production-ready AI video prompts with strict dialogue preservation, professional opening and entrance staging, cinematic shot language, director-led cut and movement methodology, single-shot capacity checks, industrial plot slicing, load scanning, high-density story-beat packing, performance-dialogue fusion, shot timing, movement, lighting, sound effects, anti-axis-crossing rules, spatial state tracking, vertical 9:16 spatial continuity, and multi-batch consistency constraints.
 ---
 
 # 丹姐6月
@@ -8,8 +8,8 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 ## Core Workflow
 
 1. Read the user's source material, reference images, and any explicit scene requirements before drafting.
-2. If producing a full storyboard execution draft, load `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, `references/industrial-control-system.md`, `references/staging-entrance-system.md`, and `references/cinematic-shot-language.md`; follow all six as the authoritative specification.
-3. Before splitting, perform a compact control pass: identify source mode, name mode, core conflict, true plot boundaries, active character count, load level, dominant timing driver, opening/entrance/exit staging needs, spatial state, master spatial relationship, shot-language strategy, sound plan, and opening/escalation/aftermath visual anchors.
+2. If producing a full storyboard execution draft, load `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, `references/industrial-control-system.md`, `references/staging-entrance-system.md`, `references/cinematic-shot-language.md`, and `references/camera-cutting-spatial-methodology.md`; follow all seven as the authoritative specification.
+3. Before splitting, perform a compact control pass: identify source mode, name mode, core conflict, true plot boundaries, active character count, load level, dominant timing driver, opening/entrance/exit staging needs, spatial state, master spatial relationship, shot-language strategy, shot-capacity risks, sound plan, and opening/escalation/aftermath visual anchors.
 4. Split by complete dramatic beats, not by single dialogue lines. Preserve all original dialogue exactly; never delete, compress, paraphrase, or rewrite dialogue to fit timing.
 5. Establish the scene's action line, camera safety side, screen-left/screen-right assignments, and vertical 9:16 lanes before writing shots. Keep this as a production ledger, not repeated as verbose AI-video prompt text.
 6. Track each character's position, posture, facing direction, props, visible condition, emotion, eye-line, screen direction, and vertical-frame lane from segment to segment.
@@ -37,6 +37,8 @@ description: Generate AI short-drama and short-video storyboard execution drafts
 - Shot lines must be high-density natural-language prompts with director-level camera behavior: camera start/move/end, composition or movement grammar, compact spatial sentence, performance process, dialogue or OS/VO fusion when present, sound/physical cue, and `[光效]`. Do not leave dialogue as a bare quote after the action.
 - Director thinking is internal. Final shot lines must not explain `为什么这样拍`, `镜头动机`, or `用来表达什么`; they must make meaning visible through framing, distance, focus, blocking, movement, reaction, sound, and rhythm.
 - Each shot should internally serve an editing function such as establish, drive, reveal, react, contrast, interrupt, settle, or hook. Vary these functions inside a segment, but do not print the function name as a label.
+- Before each shot, run the single-shot capacity gate from `camera-cutting-spatial-methodology.md`: shot size, 9:16 frame, subject distance, depth layer, and visibility state decide who can appear. If a close/medium-close reaction cannot physically include distant targets, keep them off-screen by eye-line or split into a direct-cut relationship shot.
+- Never let one shot do incompatible jobs such as close reaction + distant group relationship refresh, OS reaction + full spatial map, or medium-close speaker + detailed far-separated opponents.
 - If dialogue or camera movement outlasts the visible action, fill the time with motivated micro-action, breath, eye-line change, fabric/prop response, silence, or environmental movement; never leave a static talking vacuum.
 - Do not repeat the same movement style in adjacent shots. Main movement choices should favor left/right pan, rotating tilt up/down, and slow push-in; no single movement type should exceed 30% of shots in a segment.
 - Characters cannot stand still and recite lines. Anyone visible must have a relevant facial reaction or body micro-action.
@@ -110,6 +112,7 @@ Use this structure for every segment:
 - 视觉锚点：
 - 开场/入场调度：
 - 镜头行为策略：
+- 镜头容量策略：
 - 空间状态：
 - 主空间关系：
 - 剪辑律动：
@@ -171,7 +174,7 @@ Use this structure for every segment:
 台词字数统计：XX字，段时长XX秒，符合15秒内20字≤台词≤45字。
 
 分秒运镜及切镜视频提示词
-2秒 景别 / 运镜方式（速度） / 构图方式 + 简短空间锁定词（如入口侧同轴、沈左陆中李右、同侧过肩、前中后景）；镜头从某个动作或空间锚点开始，按明确路径移动或保持有意图的弱运动，落到情绪、权力、揭示、反应、对比或余韵重点；构图、距离、焦点、遮挡、高低或留白必须直接呈现在画面句里，不写解释性理由；角色开口前有呼吸、停顿、眼神或手部动作，说“原台词/原OS/原VO”，说完后有余韵反应；加入环境声、动作声或物理反馈；[光效]
+2秒 景别 / 运镜方式（速度） / 构图方式 + 简短空间锁定词（如入口侧同轴、沈左陆中李右、同侧过肩、前中后景）；镜头从某个动作或空间锚点开始，按明确路径移动或保持有意图的弱运动，落到情绪、权力、揭示、反应、对比或余韵重点；构图、距离、焦点、遮挡、高低或留白必须直接呈现在画面句里，不写解释性理由；景别容量装不下的对象写成画外方向、焦外存在或另切关系镜，不能强行同框；角色开口前有呼吸、停顿、眼神或手部动作，说“原台词/原OS/原VO”，说完后有余韵反应；加入环境声、动作声或物理反馈；[光效]
 
 特效提示词
 
@@ -189,7 +192,7 @@ Use this structure for every segment:
 
 ## Required Self-Check
 
-Before finalizing, check the draft against `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, `references/industrial-control-system.md`, `references/staging-entrance-system.md`, and `references/cinematic-shot-language.md`, especially:
+Before finalizing, check the draft against `references/full-guidelines.md`, `references/axis-continuity.md`, `references/high-density-storyboard.md`, `references/industrial-control-system.md`, `references/staging-entrance-system.md`, `references/cinematic-shot-language.md`, and `references/camera-cutting-spatial-methodology.md`, especially:
 
 - dialogue completeness and character-count compliance
 - every segment contains a complete micro-beat and has `本段生成规划`
@@ -197,6 +200,9 @@ Before finalizing, check the draft against `references/full-guidelines.md`, `ref
 - no segment is merely "one thin line + one reaction" unless it is a major turn
 - every shot has director-level visual behavior and cannot be reduced to `景别 + 运镜 + 动作`
 - movement choice creates visible pressure, reveal, reaction, contrast, reversal, aftermath, or hook through camera behavior rather than explanation
+- every shot passes the single-shot capacity gate: shot size, vertical frame, distance, depth, and visibility state are compatible
+- no close/medium-close shot forces far-separated characters into the same visible relationship; use off-screen eye-line or a separate relationship shot
+- no shot mixes incompatible functions such as close reaction plus distant spatial refresh
 - each segment varies editing functions instead of stacking only dialogue-driving shots
 - no scene opening begins with characters hard-cut into confrontation without a spatial/behavioral lead-in
 - no new character appears in final position without cue, approach/reveal, settle, existing-character reaction, and spatial integration
