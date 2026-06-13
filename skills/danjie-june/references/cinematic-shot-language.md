@@ -20,7 +20,7 @@ Before writing a shot, internally choose one primary function:
 - **情绪崩裂**: show a mask cracking, breath breaking, hand losing control, or posture changing.
 - **悬念保留**: withhold full information through partial framing, foreground occlusion, off-screen eye-line, or sound.
 - **动作因果**: show cause -> impact -> reaction -> aftermath in separate controlled shots when load is high.
-- **女频爽点**: emphasize being seen through, public pressure, calm counterattack, emotional reversal, or humiliating exposure with restrained but sharp framing.
+- **类型爽点/情绪爆点**: when the source genre calls for it, emphasize being seen through, public pressure, counterattack, reversal, exposure, triumph, dread, comedy, grief, romance, or suspense with framing appropriate to that genre.
 - **余韵沉降**: after a turn, let breath, silence, distance, or physical settling carry the beat.
 
 ## Shot Language Formula
@@ -36,13 +36,13 @@ Do not literally keep bracket labels in final output. Do not add "this expresses
 Good:
 
 ```text
-3秒 中近景 / 缓慢推进 / 陆左沈中后；镜头从陆清韵攥紧的手推进到她强撑的脸侧，画面逐渐压窄，沈寒渊仍在后景中线不动；她开口前先吞住呼吸，说“原台词”，说完视线不敢离开沈寒渊；衣袖轻响；[光效]
+3秒 中近景 / 缓慢推进 / A左B中后；镜头从A攥紧的手推进到A强撑的脸侧，画面逐渐压窄，B仍在后景中线不动；A开口前先吞住呼吸，说“原台词”，说完视线不敢离开B；衣袖或道具轻响；[光效]
 ```
 
 Bad:
 
 ```text
-3秒 中近景 / 缓慢推进 / 陆左沈中后 + 陆清韵说台词 + 表情紧张 + [光效]
+3秒 中近景 / 缓慢推进 / A左B中后 + A说台词 + 表情紧张 + [光效]
 ```
 
 ## Camera Behavior
@@ -106,9 +106,9 @@ Each shot should internally serve one editing function:
 
 Vary the functions inside a segment. Do not print `Set`, `Drive`, `Reveal`, etc. in the final shot line.
 
-## Female-Oriented Short-Drama Lens
+## Genre-Specific Lens
 
-For realistic female-oriented爽剧, prioritize:
+Do not hard-code one drama type. Match the source genre or the user's requested tone. For realistic female-oriented爽剧, prioritize:
 
 - Calm authority defeating frantic explanation.
 - The accused held in frame after being exposed.
@@ -117,7 +117,7 @@ For realistic female-oriented爽剧, prioritize:
 - Small physical details that show social pressure: breath held, hand freezing, step stopped, gaze unable to escape.
 - Public spatial pressure: witnesses in background, factions visible, distance preserved.
 
-Do not turn these into melodramatic overacting. The pleasure comes from controlled pressure and precise reaction.
+For suspense, comedy, action, romance, family drama, workplace drama, fantasy, or any other genre, choose equivalent visual pleasures from the source: conceal/reveal, rhythm break, physical cause-effect, intimacy/distance, status shift, or aftermath. Do not turn any genre into melodramatic overacting unless the source asks for it.
 
 ## Shot-Line Minimum Standard
 
@@ -143,6 +143,6 @@ Before finalizing, revise if:
 - Dialogue does not create a visible reaction or consequence.
 - A reveal is described as information instead of being staged through camera/focus/reaction.
 - A power shift is stated in planning but not visible in framing, distance, stillness, or eye-lines.
-- A female-oriented爽点 is rushed past without reaction, silence, or held pressure.
+- A genre-specific emotional beat is rushed past without reaction, silence, physical consequence, or held pressure.
 - Final shot lines contain explanatory phrases like `为了`, `用来表达`, `镜头动机`, or `镜头语言：`.
 - A close or medium-close shot tries to carry a far-separated group relationship instead of cutting to a relationship shot.

@@ -64,7 +64,7 @@ Mandatory content in each shot:
 
 - **Internal shot function**: decide what the shot must accomplish before writing, then show it through visible blocking, framing, movement, focus, distance, occlusion, held reaction, or sound.
 - **Cinematic behavior**: final shot lines must not explain purpose; the camera behavior and character reaction must make the story effect visible.
-- **Shot capacity**: decide who can physically fit in the chosen shot size and vertical frame; distant targets become off-screen eye-line or require a separate relationship shot.
+- **Shot capacity**: decide who can physically fit in the chosen shot size and current aspect ratio; distant targets become off-screen eye-line or require a separate relationship shot.
 - **Camera motion**: start point, movement, speed, and end point.
 - **Space sentence**: where the key people still are; if no one moved, say the original spatial relationship remains.
 - **Performance process**: emotion as a change, not a label. Use "先...随后...说到...时...说完后..." when possible.
@@ -90,7 +90,7 @@ Do not over-describe micro-expressions when the camera cannot see them.
   - exact dialogue
   - expression/action while speaking
   - after-reaction or silence
-- For source-authored OS/VO, preserve the text exactly and pair it with a visible physical reaction. Example: "小七在沈寒渊怀中微微僵住，视线从赵烈逃跑方向滑回陆清韵，OS：..."
+- For source-authored OS/VO, preserve the text exactly and pair it with a visible physical reaction. Example: "A微微僵住，视线从画外C方向滑回画外B方向，OS：..."
 - Do not add new OS/VO to fill information density.
 
 ## Space In The Foreground Prompt
@@ -100,7 +100,7 @@ The ledger can be compact, but shot prompts must still contain natural spatial l
 Good:
 
 ```text
-陆清韵仍停在中偏左，没有靠近沈寒渊；赵烈留在右后出口前，沈寒渊抱着小七站在后景中线不动。
+A仍停在中偏左，没有靠近B；C留在右后出口前，B站在后景中线不动。
 ```
 
 Bad:

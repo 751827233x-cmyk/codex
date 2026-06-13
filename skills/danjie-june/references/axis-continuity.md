@@ -1,12 +1,12 @@
-# 轴线、竖屏空间与分段连续性规则
+# 轴线、画幅空间与分段连续性规则
 
-Use this reference with `full-guidelines.md` whenever drafting AI short-drama storyboard execution drafts. These rules solve accidental axis crossing, vertical-video spatial confusion, and multi-batch continuity drift. They override any looser wording about "left/right" or "space relation" in the base rules.
+Use this reference with `full-guidelines.md` whenever drafting AI short-drama storyboard execution drafts. These rules solve accidental axis crossing, aspect-ratio spatial confusion, and multi-batch continuity drift. They override any looser wording about "left/right" or "space relation" in the base rules.
 
 ## Root Causes To Prevent
 
 - Do not mix story-world left/right with screen left/right. "人物在左侧" must state whether it means screen-left, world-left, or frame-left from the current camera.
 - Do not let each segment start from a new imagined camera side. Multi-batch generation fails when the prior segment's camera side and screen direction are not carried forward.
-- Do not rely on full shots alone to preserve space. Full shots help, but vertical 9:16 framing compresses horizontal distance and can make left/right relationships ambiguous.
+- Do not rely on full shots alone to preserve space. Full shots help, but every aspect ratio distorts space differently: vertical frames compress width, horizontal frames can over-spread groups, square frames can flatten depth.
 - Do not write shot-reverse-shot as free "反打" without an axis rule. Reverse angles easily cross the action line and flip eye-lines.
 - Do not use over-shoulder or close reaction shots without naming which shoulder/which screen side is visible.
 - Do not describe movement only as "left/right" unless the coordinate reference is fixed.
@@ -19,13 +19,13 @@ Required fields:
 
 ```text
 场次空间锁定表
-- 画幅：9:16竖屏 / 或用户指定画幅
+- 画幅：用户指定画幅；若未指定，写明本次假定画幅
 - 世界坐标：上/下/左/右/前/后分别对应什么固定物或方向
 - 主轴线：哪两个人或哪条动作方向形成180度轴线
 - 摄影机安全侧：摄影机始终停留在主轴线哪一侧
 - 屏幕方向锁：人物A保持屏幕左/右，人物B保持屏幕左/右；A看向屏幕左/右，B看向屏幕左/右
 - 纵深层级：前景/中景/后景分别是谁或什么
-- 竖屏安全区：主体落在画面中线两侧的百分比位置，头顶/脚底/手部动作不可被裁切
+- 画幅安全区：按当前画幅说明主体安全区、头顶/脚底/手部/道具/运动终点不可被裁切
 - 允许机位：同侧正侧、同侧斜45度、同侧过肩、同侧中轴近景、同侧低角度/高角度
 - 禁止机位：跨过主轴线的反打、从对侧拍摄、让人物屏幕左右互换的角度
 - 本场连续性状态：上一段末帧每个角色的位置、姿态、朝向、情绪、道具、外观状态
@@ -59,14 +59,15 @@ When resetting, write:
 
 Do not reset the axis because the shot "looks better".
 
-## Vertical 9:16 Rules
+## Aspect-Ratio Rules
 
-- Treat vertical video as a narrow stage. Keep the main relationship on three lanes: screen-left 30%, screen-center 50%, screen-right 70%.
-- Do not use wide horizontal blocking as the only relationship cue. Add depth cues: foreground shoulder, midground speaker, background reaction, floor/water/table edge, or light direction.
-- Keep key faces, hands, and props inside the central 70% safe area unless a shot intentionally uses foreground occlusion.
-- For two-person dialogue, prefer same-side over-shoulder, 3/4 profile, and vertical depth stacking over flat left-right spacing.
-- Avoid large lateral pans that change who occupies screen-left and screen-right. If panning, state that screen direction remains locked.
-- In close shots, preserve orientation with shoulder, profile direction, or off-screen eye-line: "A remains on screen-left side, looking screen-right toward B".
+- Treat the requested aspect ratio as part of the scene design, not a fixed default.
+- Vertical formats, e.g. 9:16 / 3:4: narrow width, strong center-safe pressure. Use vertical lanes and depth stacking; avoid forcing wide left/right relationships into close shots.
+- Horizontal 16:9 / 2.39:1: wider lateral capacity. Use width for factions, pursuit paths, entrances, and group blocking, but do not let close shots pretend to carry distant detail.
+- Square / near-square: balanced but limited. Use center/edge, foreground/background, and high/low relations instead of relying only on wide spread.
+- Keep key faces, hands, props, and movement endpoints inside the safe area for the current frame.
+- For dialogue, preserve orientation with same-side over-shoulder, 3/4 profile, foreground/background depth, or off-screen eye-line according to the frame.
+- Avoid lateral pans that change who occupies screen-left and screen-right unless the script visibly changes spatial relation. If panning, state that screen direction remains locked.
 
 ## Per-Segment Continuity Ledger
 
@@ -88,17 +89,17 @@ Each shot line must protect the locked space without dumping the whole productio
 
 Use compact duration format by default:
 
-- Good: `2秒 中景 / 缓慢推进 / 入口侧同轴，沈左陆中李右，前景陆清韵跪位，中景众人，后景主位 + ...`
-- Avoid: `00:00-00:02 中景 + 轴线：新场景建轴 + 屏幕方向：... + 竖屏构图：...`
+- Good: `2秒 中景 / 缓慢推进 / 入口侧同轴，A左B中C右，前景A，中景B，后景C + ...`
+- Avoid: `00:00-00:02 中景 + 轴线：新场景建轴 + 屏幕方向：... + 画幅构图：...`
 
 Include only visually useful continuity words:
 
 - `入口侧同轴`
 - `同侧过肩`
-- `沈左/陆中/李右`
+- `A左/B中/C右`
 - `A左看右、B右看左`
 - `前景A、中景B、后景C`
-- `左30%/中50%/右70%` only when a shot needs exact vertical-frame lane anchoring
+- `左30%/中50%/右70%` only when a vertical shot needs exact lane anchoring; for horizontal shots use left/center/right plus foreground/midground/background or screen thirds when needed
 
 Shot-line pattern:
 
@@ -108,7 +109,7 @@ Shot-line pattern:
 
 Use timeline ranges only when the user asks for an editing timeline, beat sheet, or exact timecode delivery.
 
-## Axis And Vertical Self-Check
+## Axis And Aspect-Ratio Self-Check
 
 Reject and revise the draft if any answer is "no":
 
@@ -117,7 +118,7 @@ Reject and revise the draft if any answer is "no":
 - Do all shot-reverse-shot lines say same-side/same-axis?
 - Do screen-left/screen-right assignments stay stable after each cut?
 - Does every close or over-shoulder shot preserve off-screen eye-line direction?
-- In 9:16, are the characters placed on stable lanes rather than vague left/right?
+- Are the characters placed in stable current-frame lanes/zones rather than vague left/right?
 - Does each segment carry a continuity ledger with previous end state and next first-frame constraints?
 - If an axis reset appears, is the reset visible in the action and explained?
 - Do shot lines avoid repeating verbose ledger labels while still preserving visible space?

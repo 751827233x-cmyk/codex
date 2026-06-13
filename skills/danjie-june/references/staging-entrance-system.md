@@ -8,7 +8,7 @@ Every scene opening and every meaningful character appearance must have a visibl
 
 - Where does the viewer first locate the space?
 - How does the character enter, become visible, or get revealed?
-- Where does the character settle in the vertical 9:16 frame?
+- Where does the character settle in the current frame/aspect ratio?
 - Who notices or reacts first?
 - How does the new position join the existing axis without flipping screen direction?
 
@@ -35,7 +35,7 @@ Choose the opening pattern based on the source:
 - **Action-in-progress**: if the script starts mid-argument or mid-fight, show the last half-second of pre-dialogue physical behavior before the first line: a step stops, a hand tightens, someone leans in, someone refuses to retreat.
 - **Discovery opening**: if a secret, body, object, or hidden person matters, open with the watcher or clue, then reveal the subject.
 - **Power-position opening**: if hierarchy matters, first show who is higher/lower, nearer/farther, seated/standing, protected/exposed, surrounded/isolated.
-- **Silent pressure opening**: for female-oriented tension scenes, allow a 2秒 silent shot before dialogue where breath, stillness, eye-line, or distance creates pressure.
+- **Silent pressure opening**: for tension scenes, allow a 2秒 silent shot before dialogue where breath, stillness, eye-line, or distance creates pressure.
 
 New scenes still need a full shot, but a full shot is not enough. It must contain a staging purpose: who is already in motion, who refuses to move, who controls the space, or what risk is present.
 
@@ -57,7 +57,7 @@ Choose an entrance pattern for any new or newly revealed character:
 For scene openings and entrances, include as many of these steps as the beat needs:
 
 1. **Cue**: sound, movement, light, eye-line shift, body tension, or spatial clue.
-2. **Approach or reveal**: crossing frame edge, emerging from background, landing, stepping into the safe lane, or being discovered by camera movement.
+2. **Approach or reveal**: crossing frame edge, emerging from background, landing, stepping into the current-frame safe zone, or being discovered by camera movement.
 3. **Settle**: the character stops, balances, lowers a hand, turns, looks up, holds a posture, or claims a lane.
 4. **Reaction**: at least one existing character reacts with eye-line, breath, posture, silence, or a small movement.
 5. **Integration**: update the axis, screen side, depth layer, distance, and who now controls the pressure.

@@ -20,7 +20,7 @@ When rules compete, resolve them in this order:
 
 1. Safety and prohibited content handling.
 2. Source integrity: dialogue, plot causality, OS/VO preservation, and no mid-line truncation.
-3. Spatial continuity: axis, screen direction, real distance, height difference, layer, occlusion, and vertical 9:16 lanes.
+3. Spatial continuity: axis, screen direction, real distance, height difference, layer, occlusion, and current-aspect frame lanes.
 4. Physical and optical plausibility: visible detail must match shot size, distance, lighting, and material behavior.
 5. Editing logic: cuts serve action continuity, emotional turns, reaction, reveal, or physical aftermath.
 6. Character consistency: names, identity, behavior logic, established visible state.
@@ -67,7 +67,7 @@ Danjie June uses compact shot durations (`2秒`, `3秒`, `4秒`) and segments un
 
 Use a simple storyboard-facing state machine:
 
-- **Spatial initialization**: first scene or new location. Start with a silent full shot or wide relationship shot to lock the environment, main axis, screen direction, depth layers, and vertical safe lanes.
+- **Spatial initialization**: first scene or new location. Start with a silent full shot or wide relationship shot to lock the environment, main axis, screen direction, depth layers, and current-frame safe zones.
 - **Full inheritance**: same place and continuous action. Do not repeat a full establishment unless needed; carry every character's position, posture, direction, eye-line, prop, visible condition, and emotion forward.
 - **Relationship re-establishment**: same place, but the viewer may misunderstand distance, height, occlusion, faction layout, or pressure relationship. Add a compact relationship shot before close or over-shoulder shots.
 
