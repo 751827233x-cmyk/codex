@@ -1,20 +1,16 @@
 # 电影镜头语言系统
 
-Use this reference with Danjie June storyboard drafts whenever writing `分秒运镜及切镜视频提示词`. This system makes each shot express a clear directorial idea instead of only listing shot size, camera movement, action, and space.
+Use this reference with Danjie June storyboard drafts whenever writing `分秒运镜及切镜视频提示词`. This system makes each shot carry director-level visual decisions instead of only listing shot size, camera movement, action, and space.
 
 ## Core Requirement
 
-Every shot must answer one director question:
+Director thinking happens before writing the shot. The final AI-video prompt must not explain the director's reasoning. It must only show the camera behavior and visible result.
 
-```text
-这个镜头为什么存在？
-```
+Do not write explanatory wording such as `为了表现压迫感`, `用这个镜头表达`, `镜头动机是`, `这个镜头为什么存在`, or `镜头语言：压迫感` in the final shot line. Let camera position, framing, movement, distance, focus, blocking, sound, and reaction do the work.
 
-The answer must be visible in the shot line as natural cinematic language. Do not write empty labels such as `镜头语言：压迫感`. Instead, write how the camera, framing, movement, distance, focus, light, blocking, sound, and reaction create that meaning.
+## Internal Shot Decisions
 
-## Shot Motivation Categories
-
-Choose one primary motivation for each shot:
+Before writing a shot, internally choose one primary function:
 
 - **建立关系**: show who controls the space, who is exposed, who is blocked, who is far/near/high/low.
 - **压迫推进**: use slow push-in, low angle, narrowed foreground, or reduced negative space to make pressure grow.
@@ -29,18 +25,18 @@ Choose one primary motivation for each shot:
 
 ## Shot Language Formula
 
-Each shot line should contain these layers, compactly:
+Each shot line should read like a shootable visual instruction, not a rationale:
 
 ```text
-3秒 景别 / 运镜方式（速度） / 空间锁定词；用[镜头动机]，镜头从[起点]经[路径/视角态度]落到[终点]，通过[构图/距离/焦点/遮挡/高低/留白]表达[权力或情绪变化]；角色以[动作/表情/台词融合]完成剧情；[声音/物理反馈]；[光效]
+3秒 景别 / 运镜方式（速度） / 空间锁定词；镜头从[可见起点]沿[路径/焦点/遮挡/高低/距离变化]落到[视觉终点]，[构图结果和人物关系自然呈现]；角色以[动作/表情/台词融合]完成剧情；[声音/物理反馈]；[光效]
 ```
 
-Do not literally keep bracket labels in final output. Expand them into a readable sentence.
+Do not literally keep bracket labels in final output. Do not add "this expresses..." after the shot.
 
 Good:
 
 ```text
-3秒 中近景 / 缓慢推进 / 陆左沈中后；镜头从陆清韵攥紧的手推进到她强撑的脸侧，用逐渐压窄的画面逼出她谎言被看穿的窒息感；她开口前先吞住呼吸，说“原台词”，说完视线不敢离开沈寒渊；衣袖轻响；[光效]
+3秒 中近景 / 缓慢推进 / 陆左沈中后；镜头从陆清韵攥紧的手推进到她强撑的脸侧，画面逐渐压窄，沈寒渊仍在后景中线不动；她开口前先吞住呼吸，说“原台词”，说完视线不敢离开沈寒渊；衣袖轻响；[光效]
 ```
 
 Bad:
@@ -49,9 +45,9 @@ Bad:
 3秒 中近景 / 缓慢推进 / 陆左沈中后 + 陆清韵说台词 + 表情紧张 + [光效]
 ```
 
-## Camera Attitude
+## Camera Behavior
 
-Every camera choice should carry an attitude:
+Translate internal attitude into visible camera behavior:
 
 - **冷静审判**: stable frame, slow push-in, centered pressure, restrained sound.
 - **窥探秘密**: foreground occlusion, partial reveal, low sound, slow lateral movement.
@@ -63,7 +59,7 @@ Every camera choice should carry an attitude:
 - **尴尬暴露**: hold the accused in frame after the line, let silence and others' eye-lines trap them.
 - **情绪碎裂**: small unstable movement or breath-like handheld only when emotion genuinely destabilizes.
 
-Use these attitudes as cinematic behavior, not as labels.
+Use these as cinematic behavior, not as labels. Final shot lines should show the behavior directly.
 
 ## Composition Grammar
 
@@ -95,9 +91,9 @@ Use movement to create meaning:
 
 Avoid repeating movement for decoration. If two adjacent shots use similar movement, their motivations must be different and clear.
 
-## Editing Function
+## Internal Editing Function
 
-Each shot must serve one editing function:
+Each shot should internally serve one editing function:
 
 - **Set**: establish spatial/power relationship.
 - **Drive**: push action or dialogue forward.
@@ -108,7 +104,7 @@ Each shot must serve one editing function:
 - **Settle**: let the emotional/physical aftermath land.
 - **Hook**: end with a frame that demands the next segment.
 
-Vary the functions inside a segment. A segment made only of `Drive` shots will feel flat.
+Vary the functions inside a segment. Do not print `Set`, `Drive`, `Reveal`, etc. in the final shot line.
 
 ## Female-Oriented Short-Drama Lens
 
@@ -125,12 +121,12 @@ Do not turn these into melodramatic overacting. The pleasure comes from controll
 
 ## Shot-Line Minimum Standard
 
-Reject a shot line if removing the movement phrase does not change meaning. That means the movement has no language.
+Reject a shot line if removing the camera movement or framing phrase does not change the visible scene. That means the movement is decorative.
 
 Each shot line must include:
 
-- A visible reason for this shot.
-- A camera attitude or composition strategy.
+- A visible camera behavior that changes pressure, information, reaction, distance, or rhythm.
+- A composition strategy shown through frame position, depth, focus, occlusion, high/low relation, or negative space.
 - A movement path or deliberate weak-motion state.
 - A story effect: pressure, reveal, reaction, contrast, reversal, aftermath, or hook.
 - Character performance fused with dialogue/OS/VO if present.
@@ -142,8 +138,9 @@ Before finalizing, revise if:
 
 - The shot line only says who speaks, who moves, and where they stand.
 - Movement is generic and could be swapped with any other movement without changing meaning.
-- Every shot uses the same emotional attitude.
+- Every shot uses the same visual behavior.
 - Dialogue does not create a visible reaction or consequence.
 - A reveal is described as information instead of being staged through camera/focus/reaction.
 - A power shift is stated in planning but not visible in framing, distance, stillness, or eye-lines.
 - A female-oriented爽点 is rushed past without reaction, silence, or held pressure.
+- Final shot lines contain explanatory phrases like `为了`, `用来表达`, `镜头动机`, or `镜头语言：`.

@@ -1,6 +1,6 @@
 # 高密度分镜与情节打包规则
 
-Use this reference with `full-guidelines.md`, `axis-continuity.md`, `industrial-control-system.md`, and `cinematic-shot-language.md` when the generated storyboard feels thin, too fragmented, or lacks cinematic information per segment. `industrial-control-system.md` governs plot slicing, load scanning, spatial inheritance, and stability; `cinematic-shot-language.md` governs why each shot exists and how it expresses story through camera grammar; this file governs how each segment and shot becomes denser without becoming bloated.
+Use this reference with `full-guidelines.md`, `axis-continuity.md`, `industrial-control-system.md`, and `cinematic-shot-language.md` when the generated storyboard feels thin, too fragmented, or lacks cinematic information per segment. `industrial-control-system.md` governs plot slicing, load scanning, spatial inheritance, and stability; `cinematic-shot-language.md` governs director-level camera behavior and keeps final shot lines visual instead of explanatory; this file governs how each segment and shot becomes denser without becoming bloated.
 
 ## Compatibility Boundaries
 
@@ -62,8 +62,8 @@ Each shot line should be a compact natural-language sentence, not a list of labe
 
 Mandatory content in each shot:
 
-- **Shot purpose**: why this shot exists, written as natural story logic, e.g. "用沈寒渊的静止压住赵烈逃跑意图".
-- **Cinematic language**: how the framing, movement, focus, distance, occlusion, or held reaction expresses that purpose.
+- **Internal shot function**: decide what the shot must accomplish before writing, then show it through visible blocking, framing, movement, focus, distance, occlusion, held reaction, or sound.
+- **Cinematic behavior**: final shot lines must not explain purpose; the camera behavior and character reaction must make the story effect visible.
 - **Camera motion**: start point, movement, speed, and end point.
 - **Space sentence**: where the key people still are; if no one moved, say the original spatial relationship remains.
 - **Performance process**: emotion as a change, not a label. Use "先...随后...说到...时...说完后..." when possible.

@@ -103,7 +103,7 @@ Include only visually useful continuity words:
 Shot-line pattern:
 
 ```text
-2秒 景别 / 运镜方式（速度） / 构图方式 + 入口侧同轴，A左看右、B右看左，前景A中景B后景C + 镜头语言 + 人物情绪动作 + [光效]
+2秒 景别 / 运镜方式（速度） / 构图方式 + 入口侧同轴，A左看右、B右看左，前景A中景B后景C + 距离/焦点/遮挡/留白变化 + 人物情绪动作 + [光效]
 ```
 
 Use timeline ranges only when the user asks for an editing timeline, beat sheet, or exact timecode delivery.
